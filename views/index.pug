@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  h2 Messages 
+    each msg in messages
+      p #{msg.text}
+      p #{msg.user}
+      p #{msg.added}
+
+  form(method="POST") 
+    label(for="message") Message
+    input(type="text" name="messageText" )
+    label(for="message") Name
+    input(type="text" name="name" )
+    button(type="submit") Submit
